@@ -1,0 +1,41 @@
+列表
+
+1.定义一个列表
+classmates = ['Tom','Jerry','Curry']
+英文的中括号是列表的标志，各个元素以逗号隔开。
+
+2.获取列表的长度 len()
+len(classmates)
+
+3.取单个元素的值
+classmates[0]
+用  list[index]  的形式，index的取值为 0~len(list)-1 。classmates的三个元素的index分别是：0,1,2 。
+如果，index取超了，程序会报数组越界异常。
+
+4.index还可以倒着数
+classmates[2],classmates[-1]
+就classmates这个列表来说，上边两种取值方式取到的都是 'Curry'。
+
+5.列表元素添加：在最后边添加
+classmates.append('Jordan')
+因为，列表是有序的，可以想象列表是一个队伍，如果，想在队伍的最后添加'Jordan'，就可以用append()方法，添加在最后边。
+
+6.列表元素添加：在指定位置添加
+classmates.insert(1, 'James')
+还是那个队伍，'James'想插队当第二名，就可以用insert()方法。当然，如果他插队了，那么在他后边的元素的index都要+1 。
+
+7.删除列表末尾元素，确切的说是弹出，因为它不只是删除原列表的最后一个元素，还将它作为了返回值。
+classmates.pop()
+如果打印这段语句的话，会发现把'Jordan'打印出来了。
+
+8.弹出指定位置元素
+classmates.pop(1)
+这样，刚才插队的'James'就被弹出了。
+
+9.更新元素的值
+classmates[0] = 'Jack'
+直接给具体位置的元素赋值就可以了，这样第一个元素就由'Tom'更新成了'Jack'。
+
+10.列表可以容纳不同类型的值
+list = [1, 3.14, 'a', [1,2], True]
+这就是Python中列表最强大的地方。
