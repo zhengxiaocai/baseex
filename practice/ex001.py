@@ -24,7 +24,13 @@ def getMaxNum(nums):
 	str_nums = ''.join(nums)
 	return int(str_nums)
 
+# 最佳实践，一行解决问题
+def getMaxNum_best(nums):
+	return int(''.join(sorted([str(num) for num in nums], reverse=True)))
+
 
 if __name__ == '__main__':
 	nums = [786, 28400, 347, 7732, 8498]
 	print(getMaxNum(nums))
+	print(getMaxNum_best(nums))
+
