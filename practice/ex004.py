@@ -29,10 +29,7 @@ if __name__ == '__main__':
     print(is_valid_ip('0.0.0.0') == True)
     print(is_valid_ip('0.34.82.53') == True)
     print(is_valid_ip('192.168.1.300') == False)
-
-    print('56 '.isdigit())
-    print('045'.isdigit())
-
+    
     """
     总结：
         1.'45 '的合法性，可以用 s.isdigit() 来判断，因为它有一个空格。
