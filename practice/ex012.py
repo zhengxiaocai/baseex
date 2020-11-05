@@ -17,6 +17,7 @@ if __name__ == '__main__':
     print(reverse_words('double  spaced  words') == 'elbuod  decaps  sdrow')
     print(reverse_words('  ab  ') == '  ba  ')
     print(reverse_words(' a b c  ') == ' a b c  ')
+    
     # print('###'.split('#'))
     #
     # print('  ab  '.split())
