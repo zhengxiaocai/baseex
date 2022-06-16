@@ -45,3 +45,9 @@ if __name__ == '__main__':
     print(rgb_best(255, 255, 255) == "FFFFFF")
     print(rgb_best(254, 253, 252) == "FEFDFC")
     print(rgb_best(-20, 275, 125) == "00FF7D")
+
+    """
+        知识点：
+        1、简单逻辑用lambda
+        2、{:02X}
+    """
