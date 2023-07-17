@@ -18,19 +18,26 @@
 然后，再把字符串拼接起来，然后，转换格式就可以了。
 """
 
-def getMaxNum(nums):
-	nums = [str(num) for num in nums]
-	nums = sorted(nums, reverse=True)
-	str_nums = ''.join(nums)
-	return int(str_nums)
+
+def get_max_num(nums):
+    nums = [str(num) for num in nums]
+    nums = sorted(nums, reverse=True)
+    str_nums = ''.join(nums)
+    return int(str_nums)
+
 
 # 最佳实践，一行解决问题
-def getMaxNum_best(nums):
-	return int(''.join(sorted([str(num) for num in nums], reverse=True)))
+def get_max_num_better(nums):
+    return int(''.join(sorted([str(num) for num in nums], reverse=True)))
+
+
+# 用map替代列表生成式
+def get_max_num_best(nums):
+    return int(''.join(sorted(map(str, nums), reverse=True)))
 
 
 if __name__ == '__main__':
-	nums = [786, 28400, 347, 7732, 8498]
-	print(getMaxNum(nums))
-	print(getMaxNum_best(nums))
-
+    test_nums = [786, 28400, 347, 7732, 8498]
+    print(get_max_num(test_nums))
+    print(get_max_num_better(test_nums))
+    print(get_max_num_best(test_nums))
