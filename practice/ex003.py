@@ -1,4 +1,3 @@
-
 """
 今日份的题目：
 In this simple Kata your task is to create a function that turns a string into a Mexican Wave. You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up.    
@@ -12,48 +11,53 @@ def wave(str):
 # testcase
 result = ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 print(wave("hello") == result)
-​
+
 result = ["Codewars", "cOdewars", "coDewars", "codEwars", "codeWars", "codewArs", "codewaRs", "codewarS"]
 print(wave("codewars") == result)
-​
+
 result = []
 print(wave("") == result)
-​
+
 result = ["Two words", "tWo words", "twO words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS"]
 print(wave("two words") == result)
 # 四个均为True，则通过。
 """
 
 
-def wave(str):
-    result = []
-    for i in range(len(str)):
-        if str[i] != ' ':
-            if len(str)-1 > i:
-                s = str[:i] + str[i].upper() + str[i+1:]
+def wave(_s):
+    res = []
+    for i in range(len(_s)):
+        if _s[i] != ' ':
+            if len(_s) - 1 > i:
+                s = _s[:i] + _s[i].upper() + _s[i + 1:]
             else:
-                s = str[:i] + str[i].upper()
+                s = _s[:i] + _s[i].upper()
         else:
             continue
-        result.append(s)
-    return result
+        res.append(s)
+    return res
 
 
 # 优化后
-def wave_good(str):
-    result = []
-    for i in range(len(str)):
-        if str[i] != ' ':
-            s = str[:i] + str[i].upper() + str[i+1:]
+def wave_good(_s):
+    res = []
+    for i in range(len(_s)):
+        if _s[i] != ' ':
+            s = _s[:i] + _s[i].upper() + _s[i + 1:]
         else:
             continue
-        result.append(s)
-    return result
+        res.append(s)
+    return res
 
 
 # 最佳
-def wave_best(str):
-    return [str[:i] + str[i].upper() + str[i+1:] for i in range(len(str)) if str[i] !=' ']
+def wave_best(_s):
+    return [_s[:i] + _s[i].upper() + _s[i + 1:] for i in range(len(_s)) if _s[i] != ' ']
+
+
+# 最佳
+def wave_best_format(_s):
+    return [f'{_s[:i]}{_s[i].upper()}{_s[i + 1:]}' for i in range(len(_s)) if _s[i] != ' ']
 
 
 if __name__ == '__main__':
@@ -81,7 +85,6 @@ if __name__ == '__main__':
     result = ["Two words", "tWo words", "twO words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS"]
     print(wave_best("two words") == result)
 
-
     # 测试空字符串和空格，作为条件
     if ' ':
         print('pass')
@@ -93,11 +96,9 @@ if __name__ == '__main__':
     else:
         print('Fail')
 
-
     # 测试截取的index
     s = 'Hello'
     print(s[5:4])
-
 
     """
     知识点：
@@ -106,6 +107,3 @@ if __name__ == '__main__':
     2. list[index1:index2]
         index1 index2 随便填，不会报错
     """
-
-
-
