@@ -13,27 +13,29 @@
 
 
 def is_valid_ip(s):
-    return s.count('.') == 3 and all(i.isdigit() and 0<=int(i)<=255 and i==str(int(i)) for i in s.split('.'))
+    return s.count('.') == 3 and all(i.isdigit() and 0 <= int(i) <= 255 and i == str(int(i)) for i in s.split('.'))
 
 
 if __name__ == '__main__':
-    print(is_valid_ip('12.255.56.1') == True)
-    print(is_valid_ip('') == False)
-    print(is_valid_ip('abc.def.ghi.jkl') == False)
-    print(is_valid_ip('123.456.789.0') == False)
-    print(is_valid_ip('12.34.56') == False)
-    print(is_valid_ip('12.34.56 .1') == False)
-    print(is_valid_ip('12.34.56.-1') == False)
-    print(is_valid_ip('123.045.067.089') == False)
-    print(is_valid_ip('127.1.1.0') == True)
-    print(is_valid_ip('0.0.0.0') == True)
-    print(is_valid_ip('0.34.82.53') == True)
-    print(is_valid_ip('192.168.1.300') == False)
-    
+    print(is_valid_ip('12.255.56.1') is True)
+    print(is_valid_ip('') is False)
+    print(is_valid_ip('abc.def.ghi.jkl') is False)
+    print(is_valid_ip('123.456.789.0') is False)
+    print(is_valid_ip('12.34.56') is False)
+    print(is_valid_ip('12.34.56 .1') is False)
+    print(is_valid_ip('12.34.56.-1') is False)
+    print(is_valid_ip('123.045.067.089') is False)
+    print(is_valid_ip('127.1.1.0') is True)
+    print(is_valid_ip('0.0.0.0') is True)
+    print(is_valid_ip('0.34.82.53') is True)
+    print(is_valid_ip('192.168.1.300') is False)
+
     """
     总结：
         1.'45 '的合法性，可以用 s.isdigit() 来判断，因为它有一个空格。
             通过这个判断完，还可以防止字母混入接下来的判断，出异常。
         2.'045'的合法性，可以用 str(int(s)) == s 来判断
         3.all()
+        4.custom_str.isdigit() 判断字符串是否有纯数字组成
+        5.and 是短路的
     """
